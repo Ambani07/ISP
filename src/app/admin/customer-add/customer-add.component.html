@@ -1,0 +1,56 @@
+<div class="row">
+    <div class="col-md-8 m-auto ">
+        <div class="card card-signin my-5">
+            <div class="card-body">
+                <h5 class="card-title text-center">Customer Details</h5>
+                <form class="form-signin">
+
+
+                    <div class="form-label-group">
+                        <input type="text" id="nameHelp" class="form-control" placeholder="Customer name" required autofocus>
+                        <label for="nameHelp">Customer name</label>
+                    </div>
+
+                    <div class="form-label-group">
+                        <input type="text" id="surnameHelp" class="form-control" placeholder="Customer surname" required autofocus>
+                        <label for="surnameHelp">Customer surname</label>
+                    </div>
+
+                    <div class="form-label-group">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                        <label for="inputEmail">Customer Email Address</label>
+                        <!-- <small id="nameHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="companyHelp" class="form-control" placeholder="Company name" required autofocus>
+                        <label for="companyHelp">Company name</label>
+                    </div>
+                   
+
+                    <div class="row">
+                        <div class="col form-group">
+                            <label for="exampleFormControlSelect1">Product</label>
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option>BCX Dedicated Internet</option>
+                                <option>Enterprise Internet Hosted</option>
+                                <option>Enterprise Internet Premise</option>
+                                <option>TiDIS</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label for="exampleFormControlSelect2">Term</label>
+                            <select class="form-control" id="exampleFormControlSelect2">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" routerLink="/admin/customer-product-add">Next <i class="fa fa-angle-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

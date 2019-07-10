@@ -1,0 +1,105 @@
+<div class="row">
+    <div class="col-md-8 m-auto ">
+        <div class="card card-signin my-5">
+            <div class="card-body">
+                <h5 class="card-title text-center">Product Details</h5>
+                <form class="form-signin">
+
+
+                    <div class="form-label-group">
+                        <input type="text" id="vlanIdHelp" class="form-control" placeholder="VLAN ID" required autofocus>
+                        <label for="vlanIdHelp">VLAN ID</label>
+                        <small id="vlanIdHelp" class="form-text text-muted">Send an e-mail to ispnetwork@telkom.co.za</small>
+                    </div>
+
+                    <div class="form-label-group">
+                        <input type="text" id="circuitNoHelp" class="form-control" placeholder="Circuit No" required autofocus>
+                        <label for="circuitNoHelp">Circuit No</label>
+                        <small id="circuitNo" class="form-text text-muted">This is the circuit number at customer premesis for metroLink of Mnaged LAN</small>
+                    </div>
+
+                    <div class="row">
+                        <div class="col form-label-group">
+                            <select class="form-control" id="exampleFormControlSelect1">
+                                <option value="#">-- Select Access Type --</option>
+                                <option value="#">LAN Connect</option>
+                                <option value="#">Managed LAN</option>
+                                <option value="#">MetroLink</option>
+                                <option value="#">Teraco Dedicated cross connect</option>
+                                <option value="#">Teraco Shared Cross Connect</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <div class="form-label-group">
+                                <input type="text" id="accessSpeedHelp" class="form-control" placeholder="Circuit No" required autofocus>
+                                <label for="accessSpeedHelp">Access Speed (Mb)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                        
+                    <div class="form-label-group">
+                        <input type="text" id="noIPHelp" class="form-control" placeholder="Number of IP's(Usable)" required autofocus>
+                        <label for="noIPHelp">Number of IP's(Usable)</label>
+                    </div>
+                    
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-label-group">
+                                <input type="text" id="totalBandwidth" class="form-control" placeholder="Total Bandwidth" required autofocus>
+                                <label for="totalBandwidth">Total Bandwidth</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label-group">
+                                <input type="text" id="localBandwidth" class="form-control" placeholder="Local Bandwidth" required autofocus>
+                                <label for="localBandwidth">Local Bandwidth</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-label-group">
+                                <input type="text" id="internationalBandwidth" class="form-control" placeholder="International Bandwidth" required autofocus>
+                                <label for="internationalBandwidth">International Bandwidth</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-label-group">
+                        <input type="text" id="teracoConnectHelp" class="form-control" placeholder="Teraco X Connect Point (if applicable)" required autofocus>
+                        <label for="teracoConnectHelp">Teraco X Connect Point</label>
+                        <small id="vlanIdHelp" class="form-text text-danger">If applicable</small>
+                    </div>
+                    <div class="form-label-group">
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option value="#">-- Select EI Option --</option>
+                            <option value="#">Blended</option>
+                            <option value="#">Bonze (1:6)</option>
+                            <option value="#">Gold (1:1)</option>
+                            <option value="#">Local Only</option>
+                            <option value="#">Silver (1:3)</option>
+                        </select>
+                    </div>
+                    <!-- Product Name -->
+                    <div class="form-label-group">
+                        <input type="text" id="prioritisationHelp" class="form-control" placeholder="Prioritisation" required autofocus>
+                        <label for="prioritisationHelp">Prioritisation</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="productNameHelp" class="form-control" placeholder="Product Name" required autofocus>
+                        <label for="productNameHelp">Product Name</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="usernameHelp" class="form-control" placeholder="Username" required autofocus>
+                        <label for="usernameHelp">Username</label>
+                    </div>
+                    <div class="form-label-group">
+                        <input type="text" id="accessUsernameHelp" class="form-control" placeholder="Access User Name" required autofocus>
+                        <label for="accessUsernameHelp">Access User Name</label>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-primary btn-block text-uppercase" routerLink="/admin/customer-product-add">Submit <i class="fa fa-angle-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
