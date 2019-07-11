@@ -26,8 +26,8 @@ export class AuthService {
 
     this.decodedToken = jwt.decodeToken(token);
 
-    localStorage.setItem('isb_auth', token);
-    localStorage.setItem('isb_meta',  JSON.stringify(this.decodedToken));
+    localStorage.setItem('isp_auth', token);
+    localStorage.setItem('isp_meta',  JSON.stringify(this.decodedToken));
 
     return token;
   }
@@ -51,6 +51,7 @@ export class AuthService {
   }
 
   public isAuthenticated(): boolean {
+
     return moment().isBefore(this.getExpiration());
   }
 

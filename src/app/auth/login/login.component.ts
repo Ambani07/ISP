@@ -29,11 +29,7 @@ export class LoginComponent implements OnInit {
         if(params['registered'] === 'success'){
           this.notifyMessage = 'You have been successfuly registered, you can login now!';
         }
-      },
-      () => {
-
-      }
-    );
+    });
     // initialization of form
     this.loginForm = this.fb.group({
       email: ['', [ Validators.required, 

@@ -20,6 +20,9 @@ import { SidenavComponent } from '../common/sidenav/sidenav.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerProductAddComponent } from './customer-product-add/customer-product-add.component';
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
+import { DashCardsComponent } from './dashboard/dash-cards/dash-cards.component';
+import { BreadcrumsComponent } from '../common/breadcrums/breadcrums.component';
+
 
 // routing in Admin
 const routes: Routes = [
@@ -44,6 +47,8 @@ const routes: Routes = [
     CustomerAddComponent,
     CustomerProductAddComponent,
     CustomerDetailsComponent,
+    DashCardsComponent,
+    BreadcrumsComponent
   ],
   imports: [
     BrowserModule,
