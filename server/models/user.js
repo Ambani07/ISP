@@ -8,10 +8,6 @@ const userSchema = new Schema({
         min: [2, 'Too short, min is 2 character'],
         max: [32, 'Too long, max is 32 character'],
     },
-    role: {
-        type: String,
-        required: true
-    },
     email: {
         type: String,
         min: [2, 'Too short, min is 2 character'],

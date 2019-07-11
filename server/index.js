@@ -19,15 +19,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static('views'));
 
-app.use('/api/v1/admin/customers', customerRoutes);
+app.use('/api/v1/admin', customerRoutes);
 app.use('/api/v1/users', userRouts);
 
-//routes
-app.get('/rentals', function(req, res){
-    res.json({'success': true});
-})
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, function(){
     console.log('I am running!');

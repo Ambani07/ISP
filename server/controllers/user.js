@@ -32,7 +32,7 @@ exports.auth = function(req, res){
               //return token to be stored on the client side
               return res.json(token);
         }else{
-            return res.status(422).send({errors: [{title: 'Wrong Data!', detail: 'Incorrect email or password!'}]});
+            return res.status(422).send({errors: [{title: 'Wrong Data!', detail: 'Incorrect email or password.'}]});
         }
     });
 
@@ -40,34 +40,29 @@ exports.auth = function(req, res){
 
 exports.register = function(req, res){
     //get user input from using body parser
-    const {username, role, email, password, passwordConfirmation} = req.body;
+    const {username, email, password, passwordConfirmation} = req.body;
 
     if(!username || !email){
-        return res.status(422).send({errors: [{title: 'Data missing!', detail: 'Provide email and password'}]});
+        return res.status(422).send({errors: [{title: 'Data missing!', detail: 'Provide email and password.'}]});
     }
 
     if(password !== passwordConfirmation){
-        return res.status(422).send({errors: [{title: 'Invalid password!', detail: 'Password is not the same as confirmation!'}]});
-    }
-
-    if(!role){
-        return res.status(422).send({errors: [{title: 'User role', detail: 'User role is required'}]});
+        return res.status(422).send({errors: [{title: 'Invalid password!', detail: 'Incorrect confirmation password.'}]});
     }
 
     //check if user exist
     User.findOne({email}, function(err, existingUser){
         if(err){
-            return res.status(422).send({'mongoose': 'handle mongoose errors in next lecture'});
+            return res.status(422).send({'mongoose': 'handle mongoose errors in next lecture.'});
         }
 
         if(existingUser){
-            return res.status(422).send({errors: [{title: 'Invalid email!', detail: 'This email already exist'}]});
+            return res.status(422).send({errors: [{title: 'Invalid email!', detail: 'This email already exist.'}]});
         }
 
         //create user
         const user = new User({
             username,
-            role,
             email,
             password
         });
@@ -76,7 +71,7 @@ exports.register = function(req, res){
         user.save(function(err){
             
             if(err){
-                return res.status(422).send({errors: MongooseHelpers.normalizeErrors(err.errors)});
+                return res.status(422).send({errors: normalizeErrors(err.errors)});
             }
 
             return res.json({"registered": true});
@@ -93,7 +88,7 @@ exports.authMiddleware = function(req, res, next){
 
         User.findById(user.userId, function(err, user){
             if(err){
-                return res.status(422).send({errors: MongooseHelpers.normalizeErrors(err.errors)});
+                return res.status(422).send({errors: normalizeErrors(err.errors)});
             }
 
             if(user){
