@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-customer-add',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-add.component.scss']
 })
 export class CustomerAddComponent implements OnInit {
-
+  @Input() isAdmin: boolean;
+  breadCrumps: any[] = [];
   constructor() { }
 
   ngOnInit() {

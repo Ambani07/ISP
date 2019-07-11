@@ -1,11 +1,7 @@
-import { Component, QueryList, ViewChildren, OnInit } from '@angular/core';
-import {DecimalPipe} from '@angular/common';
-import {Observable} from 'rxjs';
-
+import { Component, OnInit, Input } from '@angular/core';
 import { Customer } from '../shared/customer.model';
 
 import {CustomerService} from '../shared/customer.service';
-import {NgbdSortableHeader, SortEvent} from './sortable.directive';
 
 @Component({
   selector: 'app-customers',
@@ -14,12 +10,15 @@ import {NgbdSortableHeader, SortEvent} from './sortable.directive';
 })
 export class CustomersComponent implements OnInit {
 
+
+  @Input() isAdmin: boolean;
+  breadCrumps: any[] = [];
   customers: Customer[];
   constructor(private customerService: CustomerService) {}
 
   ngOnInit() {
+    this.breadCrumps = ['Dashboard', 'customers'];
     const customersObservable = this.customerService.getCustomers();
-
     customersObservable.subscribe(
       (customers: Customer[]) => {
         this.customers = customers;
