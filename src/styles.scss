@@ -191,7 +191,7 @@ $fa-font-path: "../node_modules/font-awesome/fonts";
     // line-height: 1.5;
     color: #212529;
     text-align: left;
-    background-color: #fff;
+    background-color: #F7F7F7 !important;
   }
   
   [tabindex="-1"]:focus {
@@ -4985,6 +4985,7 @@ $fa-font-path: "../node_modules/font-awesome/fonts";
   .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
     color: #fff;
   }
+
   
   .card {
     position: relative;

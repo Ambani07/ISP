@@ -7,45 +7,29 @@ class FakeDb {
             name: "Ambani",
             surname: "Matsedu",
             email: "example@gmail.com",
-            city: "Johannesburg",
-            street: "2626 Costa Rico",
-            region: "Centurion",
-            contactPerson: "Joe",
-            contactPersonPhoneNumber: '0728866974',
-            contactPersonCellNumber: '0123456789',
-            category: 'Enterprise Internet',
+            company: "BCX",
+            product: "BCX DI",
             term: 5
         },
         {
             name: "John",
             surname: "Doe",
             email: "john.doe@example.com",
-            city: "Johannesburg",
-            street: "565 main street",
-            region: "Teraco",
-            contactPerson: "Joe",
-            contactPersonPhoneNumber: '0728866974',
-            contactPersonCellNumber: '0123456789',
-            category: 'TI-DIS',
-            term: 3
+            company: "Telkom",
+            product: "TI-DIS",
+            term: 5
         },
         {
             name: "Lionel",
             surname: "Messi",
             email: "lionel.messi@gmail.com",
-            city: "Durban",
-            street: "1st street",
-            region: "Bellville",
-            contactPerson: "Felipe",
-            contactPersonPhoneNumber: '0728866974',
-            contactPersonCellNumber: '0123456789',
-            category: 'BCX DI',
-            term: 2
+            company: "EI",
+            product: "BCX DI",
+            term: 5
         }];
 
         this.users = [{
             username : "Test User",
-            role : "PMO",
             email : "test@gmail.com",
             password : "testtest" 
         }]
