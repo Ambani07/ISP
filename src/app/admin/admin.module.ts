@@ -6,7 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
+import { AuthModule } from '../auth/auth.module';
 // services
 import { CustomerService } from './shared/customer.service';
 import { AuthGuard } from '../auth/shared/auth.guard';
@@ -55,8 +56,11 @@ const routes: Routes = [
     NgbModule,
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    InternationalPhoneNumberModule,
+    AuthModule
   ],
   providers: [CustomerService,
               AuthGuard],

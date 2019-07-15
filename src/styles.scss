@@ -71,13 +71,14 @@ body {
   margin-bottom: 1rem;
 }
 
-.form-label-group input {
+.form-label-group input select {
   height: auto;
   border-radius: 0;
 }
 
 .form-label-group>input,
-.form-label-group>label {
+.form-label-group>label,
+.form-label-group>select {
   padding: var(--input-padding-y) var(--input-padding-x);
 }
 
@@ -170,6 +171,8 @@ body {
  :root {
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
+    --select-padding-x: 1.5rem;
+    --select-padding-y: .75rem;
     --blue: #007bff;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -377,6 +380,7 @@ body {
     outline: 5px auto -webkit-focus-ring-color;
   }
   
+  select,
   input,
   button,
   select,
@@ -389,7 +393,8 @@ body {
   }
   
   button,
-  input {
+  input,
+  select {
     overflow: visible;
   }
   
@@ -2603,6 +2608,23 @@ body {
     border-color: #dc3545;
     -webkit-box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
     box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+  }
+
+  .form-number{
+    background-color: #343A40;
+    color: #fff;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .col-input{
+    margin-top: 33px;
+  }
+
+  .form-control{
+    min-height: 50px !important;
   }
   
   .form-inline {

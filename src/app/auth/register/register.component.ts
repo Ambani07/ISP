@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   formData: any = {};
   errors: any[];
 
-  constructor(private auth: AuthService, 
+  constructor(private auth: AuthService,
               private router: Router) { }
 
   ngOnInit() {
@@ -21,10 +21,10 @@ export class RegisterComponent implements OnInit {
 
   register(){
     this.auth.register(this.formData).subscribe(
-      () =>{
+      () => {
         this.router.navigate(['/login', {registered: 'success'}]);
       },
-      (errorResponse) =>{
+      (errorResponse) => {
         this.errors = errorResponse.error.errors;
       },
     );

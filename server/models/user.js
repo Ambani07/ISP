@@ -23,6 +23,7 @@ const userSchema = new Schema({
         required: 'Password is required'
     },
     customers: [{type: Schema.Types.ObjectId, ref: 'Customer'}],
+    products: [{type: Schema.Types.ObjectId, ref: 'Product'}],
 }, {collection: "User"});
 
 //decrypt hashed password

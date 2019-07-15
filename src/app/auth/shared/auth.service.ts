@@ -37,7 +37,7 @@ export class AuthService {
     return moment.unix(this.decodedToken.exp);
   }
 
-  public register(userData): Observable<any>{
+  public register(userData): Observable<any> {
       return this.http.post('api/v1/users/register', userData);
   }
 
@@ -69,6 +69,10 @@ export class AuthService {
 
   public getUsername(): string {
     return this.decodedToken.username;
+  }
+
+  public getUserId(): string {
+    return this.decodedToken.userId;
   }
 
   public getUserEmail(): string{

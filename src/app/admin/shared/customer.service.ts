@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Customer } from './customer.model';
 
 @Injectable()
 export class CustomerService {
@@ -13,6 +12,14 @@ export class CustomerService {
 
     public getCustomers(): Observable<any> {
         return this.http.get('/api/v1/admin');
+    }
+
+    public getProducts(): Observable<any>{
+        return this.http.get('/api/v1/admin/customer-product-add');
+    }
+
+    public customerProduct(customerProductData): Observable<any> {
+        return this.http.post('api/v1/admin/customer-product-add', customerProductData);
     }
 
 }

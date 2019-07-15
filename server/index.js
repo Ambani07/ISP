@@ -9,7 +9,7 @@ const customerRoutes = require('./routes/customers'),
 
 mongoose.connect(config.DB_URI, { useNewUrlParser: true }).then(() => {
     const fakeDb = new FakeDb();
-    // fakeDb.seedDb();
+    fakeDb.seedDb();
 });
 
 //instantiate Express
@@ -23,7 +23,7 @@ app.use('/api/v1/admin', customerRoutes);
 app.use('/api/v1/users', userRouts);
 
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, function(){
     console.log('I am running!');
