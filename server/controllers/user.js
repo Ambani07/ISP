@@ -53,7 +53,7 @@ exports.register = function(req, res){
     //check if user exist
     User.findOne({email}, function(err, existingUser){
         if(err){
-            return res.status(422).send({'mongoose': 'handle mongoose errors in next lecture.'});
+            return res.status(422).send({'mongoose': 'handle mongoose errors'});
         }
 
         if(existingUser){
@@ -93,6 +93,7 @@ exports.authMiddleware = function(req, res, next){
 
             if(user){
                 res.locals.user = user;
+                console.log(user.username);
                 next();
             }else{
                 return notAuthorized(res);
