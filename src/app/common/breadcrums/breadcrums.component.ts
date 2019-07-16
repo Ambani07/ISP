@@ -16,7 +16,7 @@ export class BreadcrumsComponent implements OnInit {
 
   ngOnInit() {
     this.activePage = this.breadCrumsItems[this.breadCrumsItems.length -1];
-    console.log(this.breadCrumsItems);
+    
   }
 
 }
