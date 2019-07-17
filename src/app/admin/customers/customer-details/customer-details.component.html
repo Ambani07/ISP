@@ -1,9 +1,164 @@
-<div *ngIf="customer">
-    <p>{{customer.name}} </p>
-    <p>{{customer.surname}} </p>
-    <p>{{customer.email}} </p>
-    <p>{{customer.product}} </p>
-    <p>{{customer.company}} </p>
+
+<ol class="breadcrumb card-signin mb-5 mt-5">
+    <li class="breadcrumb-item">
+        <a routerLink="/admin">Dashboard</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a routerLink="/admin/customers">customers</a>
+    </li>
+    <li class="breadcrumb-item active"><a>Customer Details</a></li>
+</ol>
+
+
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12 ">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <table class="table table-striped" *ngIf="customer">
+                    <thead>
+                        <tr>
+                        <th scope="col"> <h4 class="text-muted">Customer Details</h4></th>
+                        <th scope="col"></th><th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">Name</th>
+                        <td>{{customer.name}}</td>
+                        <td><a class="btn btn-primary">Edit</a><a class="btn btn-primary">Delete</a></td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Surname</th>
+                        <td>{{customer.surname}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Email</th>
+                        <td>{{customer.email}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Company</th>
+                        <td>{{customer.company}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Contact Person Name</th>
+                        <td>{{customer.contactPersonName}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Contact Person Cell No</th>
+                        <td>{{customer.contactPersonCellNo}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Contact Person Phone No</th>
+                        <td>{{customer.contactPersonPhoneNo}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Address</th>
+                        <td>{{customer.address}}</td>
+                        </tr>
+        
+                    </tbody>
+                    </table>
+            </div>
+            
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <table class="table table-striped" *ngIf="customerProduct">
+                    <thead>
+                        <tr>
+                        <th scope="col"> <h4 class="text-muted">Product Details</h4></th>
+                        <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">VLAN Id</th>
+                        <td>{{customerProduct.vlanId}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Term</th>
+                        <td>{{customerProduct.term}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Circuit Number</th>
+                        <td>{{customerProduct.circuitNo}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Access Type</th>
+                        <td>{{customerProduct.accessType}}</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">Access Speed</th>
+                        <td>{{customerProduct.accessSpeed}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Number of IPs</th>
+                        <td>{{customerProduct.noIPs}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Total Bandwidth</th>
+                        <td>{{customerProduct.totalBandwidth}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Local Bandwidth</th>
+                        <td>{{customerProduct.localBandwidth}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Int Bandwidth</th>
+                        <td>{{customerProduct.intBandwidth}}</td>
+                        </tr>
+        
+                        <!-- <tr>
+                        <th scope="row" *ngIf="customerProduct.teracoConnect.length > 0">Teraco connect</th>
+                        <td>{{customerProduct.teracoConnect}}</td>
+                        </tr> -->
+        
+                        <!-- <tr>
+                        <th scope="row" *ngIf="customerProduct.eiOption.length > 0">EI Option</th>
+                        <td>{{customerProduct.eiOption}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row" *ngIf="customerProduct.prioritisation.length > 0">Prioritisation</th>
+                        <td>{{customerProduct.prioritisation}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Product Name</th>
+                        <td>{{customerProduct.productName}}</td>
+                        </tr> -->
+        
+                        <tr>
+                        <th scope="row">Username</th>
+                        <td>{{customerProduct.username}}</td>
+                        </tr>
+        
+                        <tr>
+                        <th scope="row">Access Username</th>
+                        <td>{{customerProduct.accessUsername}}</td>
+                        </tr>
+        
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12" *ngIf="customerUserCreator">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                More Info
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"> <strong>Created By: </strong> {{customerUserCreator.username}}</li>
+                <li class="list-group-item"> <strong>Date: </strong> {{customer.createdAt}}</li>
+            </ul>
+        </div>
+    </div>
 </div>
 
 

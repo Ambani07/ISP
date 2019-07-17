@@ -14,8 +14,22 @@ router.get('/secret', UserCrl.authMiddleware , function(req, res){
 
 router.get('',  function(req, res){
     Customer.find({}, function(err, foundCustomers){
-        res.json(foundCustomers);
-    })
+        Product.find({}, function(err, foundProducts){
+            return res.json([foundCustomers, foundProducts]);
+        });
+    });
+});
+
+router.get('/customers/products/:id', function(req, res){
+    const productId = req.params.id;
+    // console.log(productId);
+    Customer.find({customerProductId: mongoose.Types.ObjectId(productId)}, function(err, foundProducts){
+        if(err){
+            return res.status(422).send({errors: normalizeErrors(err.errors)});
+        }
+        console.log(foundProducts);
+        return res.json(foundProducts);
+    });
 });
 
 router.get('/customer-product-add', function(req, res){
@@ -29,13 +43,46 @@ router.get('/customer-product-add', function(req, res){
 
 router.get('/:id', function(req, res){
     const customerId = req.params.id;
+    const customerDetails = [];
 
     Customer.findById(customerId, function(err, foundCustomer){
         if(err){
             res.status(422).send({errors: [{title: 'Customer Error!', detail: 'Could not find customer'}]});
         }
-        res.json(foundCustomer);
-    })
+
+        customerDetails.push(foundCustomer);
+
+        User.findById(foundCustomer.user, function(err, foundCustomerUser){
+            if(err){
+                res.status(422).send({errors: [{title: 'Customer Product Error!', detail: 'Could not find customer product'}]});
+            }
+
+            customerDetails.push(foundCustomerUser);
+        });
+
+        CustomerProduct.findById(foundCustomer.customerProductId, function(err, foundCustomerProduct){
+            if(err){
+                res.status(422).send({errors: [{title: 'Customer Product Error!', detail: 'Could not find customer product'}]});
+            }
+
+            customerDetails.push(foundCustomerProduct);
+    
+            Product.findById(foundCustomer.productId, function(err, foundProduct){
+                if(err){
+                    res.status(422).send({errors: [{title: 'Customer Product Error!', detail: 'Could not find product'}]});
+                }
+    
+                customerDetails.push(foundProduct);
+        
+                console.log(customerDetails);
+        
+                res.json(customerDetails);
+            });
+    
+            // res.json(customerDetails);
+        });
+    });
+
 });
 
 router.post('/customer-product-add', function(req, res){

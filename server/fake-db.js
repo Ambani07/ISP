@@ -44,16 +44,21 @@ class FakeDb {
         }];
 
         this.products = [{
-            name: "BCX Dedicated Internet",
+            name: "BCX DI",
         },
         {
-            name: "Enterprise Internet Hosted"       
+            name: "EI Hosted"       
         },
         {
-            name: "Enterprise Internet Premise"
+            name: "EI Premise"
         },
         {
-            name: "Enterprise Internet Ti-Dis"       
+            name: "Ti-Dis"       
+        },
+        {
+            name: "FTTB"       
+        }, {
+            name: "FTTH"       
         }];
 
         this.customerProduct = [{

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { CustomerService } from '../../admin/shared/customer.service';
+
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -7,15 +9,32 @@ import * as $ from 'jquery';
 })
 export class SidenavComponent implements OnInit {
 
-  constructor() { }
+  // @Input() products: any[];
+  products: any[];
+
+  constructor(private customerService: CustomerService) { 
+    // console.log(this.products);
+  }
 
   ngOnInit() {
-    // Toggle the side navigation
+    this.getProducts();
+
     $('#sidebarToggle').on('click', (e: { preventDefault: () => void; }) => {
       e.preventDefault();
       $('body').toggleClass('sidebar-toggled');
       $('.sidebar').toggleClass('toggled');
     });
+
+    
+  }
+
+  getProducts() {
+    this.customerService.getCustomers().subscribe(
+      (products: any[]) => {
+        this.products = products[1];
+        console.log( this.products);
+      }
+    );
   }
 
 }

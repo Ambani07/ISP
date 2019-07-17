@@ -22,4 +22,8 @@ export class CustomerService {
         return this.http.post('api/v1/admin/customer-product-add', customerProductData);
     }
 
+    public getCustomerByProduct(productId): Observable<any> {
+        return this.http.get('/api/v1/admin/customers/products/' + productId);
+    }
+
 }
