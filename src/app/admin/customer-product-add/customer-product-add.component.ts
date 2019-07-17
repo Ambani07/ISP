@@ -93,7 +93,7 @@ export class CustomerProductAddComponent implements OnInit {
       },
     );
 
-    console.log(this.customerProductInformation);
+    // console.log(this.customerProductInformation);
 
     localStorage.removeItem('isp_customer_details');
   }

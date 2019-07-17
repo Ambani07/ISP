@@ -13,15 +13,16 @@ export class CustomersComponent implements OnInit {
 
   @Input() isAdmin: boolean;
   breadCrumps: any[] = [];
-  customers: Customer[];
+  customers: any[];
+  products: any[];
   constructor(private customerService: CustomerService) {}
 
   ngOnInit() {
     this.breadCrumps = ['Dashboard', 'customers'];
     const customersObservable = this.customerService.getCustomers();
     customersObservable.subscribe(
-      (customers: Customer[]) => {
-        this.customers = customers;
+      (customers: any[]) => {
+        this.customers = customers[0];
       },
       (err) => {
 

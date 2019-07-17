@@ -10,6 +10,7 @@ import { InternationalPhoneNumberModule } from 'ngx-international-phone-number';
 import { AuthModule } from '../auth/auth.module';
 // services
 import { CustomerService } from './shared/customer.service';
+import { ProductService } from './shared/product.service';
 import { AuthGuard } from '../auth/shared/auth.guard';
 
 // components
@@ -23,6 +24,7 @@ import { CustomerProductAddComponent } from './customer-product-add/customer-pro
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
 import { DashCardsComponent } from './dashboard/dash-cards/dash-cards.component';
 import { BreadcrumsComponent } from '../common/breadcrums/breadcrums.component';
+import { ProductComponent } from './customers/product/product.component';
 
 
 // routing in Admin
@@ -34,7 +36,8 @@ const routes: Routes = [
         {path: 'customers', component: CustomersComponent, canActivate: [AuthGuard]},
         {path: 'customer/:customerId', component: CustomerDetailsComponent, canActivate: [AuthGuard]},
         {path: 'customer-add', component: CustomerAddComponent, canActivate: [AuthGuard]},
-        {path: 'customer-product-add', component: CustomerProductAddComponent, canActivate: [AuthGuard]}
+        {path: 'customer-product-add', component: CustomerProductAddComponent, canActivate: [AuthGuard]},
+        {path: 'customers/products/:productId', component: ProductComponent, canActivate: [AuthGuard]}
     ]
 }]
 
@@ -49,7 +52,8 @@ const routes: Routes = [
     CustomerProductAddComponent,
     CustomerDetailsComponent,
     DashCardsComponent,
-    BreadcrumsComponent
+    BreadcrumsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +67,8 @@ const routes: Routes = [
     AuthModule
   ],
   providers: [CustomerService,
-              AuthGuard],
+              AuthGuard,
+              ProductService],
   bootstrap: []
 })
 export class AdminModule { }
